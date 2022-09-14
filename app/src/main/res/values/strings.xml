@@ -3,4 +3,6 @@
     <string name="button_second_activity">Second activity</string>
     <string name="button_back">Back</string>
     <string name="default_step_text" translatable="false">1</string>
+    <string name="step_blank_error">Cannot be empty</string>
+    <string name="step_not_digits_error">Must contain only digits</string>
 </resources>

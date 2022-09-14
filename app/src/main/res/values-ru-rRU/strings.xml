@@ -3,4 +3,6 @@
     <string name="app_name">Счётчик</string>
     <string name="button_second_activity">Вторая активность</string>
     <string name="button_back">Назад</string>
+    <string name="step_blank_error">Поле не должно быть пустым</string>
+    <string name="step_not_digits_error">Поле должно содержать только цифры</string>
 </resources>
