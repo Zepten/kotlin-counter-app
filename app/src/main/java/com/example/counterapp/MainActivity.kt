@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         // Поле со значением счётчика
         val valueText: TextView = findViewById(R.id.valueTextView)
-        valueText.text = currentValueText
+        valueText.text = resources.getText(R.string.default_value_text)
 
         // Поле ввода шага счётчика
         val stepText: EditText = findViewById(R.id.stepEditText)
@@ -71,11 +71,16 @@ class MainActivity : AppCompatActivity() {
         val value: Int = valueText.text.toString().toInt()
         var step: Int = stepText.text.toString().toInt()
         step = if (add) step else -step
-        currentValueText = (value + step).toString()
-        valueText.text = currentValueText
+        valueText.text = (value + step).toString()
     }
 
-    companion object {
-        private var currentValueText: String = "0"
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putCharSequence("value", findViewById<TextView>(R.id.valueTextView).text)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        findViewById<TextView>(R.id.valueTextView).text = savedInstanceState.getCharSequence("value")
     }
 }
