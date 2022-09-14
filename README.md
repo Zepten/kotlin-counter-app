@@ -1,5 +1,7 @@
 # CounterApp
 
+![icon](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
+
 ## Описание задания
 
 В приложении должны быть две Activity:
