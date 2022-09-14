@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Counter</string>
+    <string name="button_second_activity">Second activity</string>
+    <string name="button_back">Back</string>
 </resources>

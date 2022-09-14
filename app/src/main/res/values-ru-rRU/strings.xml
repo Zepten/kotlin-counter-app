@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Счётчик</string>
+    <string name="button_second_activity">Вторая активность</string>
+    <string name="button_back">Назад</string>
+</resources>
