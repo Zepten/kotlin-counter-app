@@ -22,4 +22,4 @@
 
 - [x] Ресурсы строк и их переводы на русский
 - [x] Сохранение состояния в `valueTextView` после переворота экрана с помощью `onSaveInstanceState` и `onRestoreInstanceState`
-- [ ] Логика перенесена на ViewModel
+- [ ] Применить шаблон проектирования Model-View-ViewModel (MVVM)
