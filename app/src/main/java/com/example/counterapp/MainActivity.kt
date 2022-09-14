@@ -13,33 +13,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val valueText = findViewById<TextView>(R.id.valueTextView)
-        val stepText = findViewById<EditText>(R.id.stepEditText)
+        // Поле со значением счётчика
+        val valueText: TextView = findViewById(R.id.valueTextView)
         valueText.text = currentValueText
-        stepText.setText("1")
+
+        // Поле ввода шага счётчика
+        val stepText: EditText = findViewById(R.id.stepEditText)
+        stepText.setText(resources.getText(R.string.default_step_text))
 
         // Кнопка "прибавить"
-        findViewById<ImageButton>(R.id.plusImageButton).setOnClickListener {
-            val value: Int = valueText.text.toString().toInt()
-            val step: Int = stepText.text.toString().toInt()
-            currentValueText = (value + step).toString()
-            valueText.text = currentValueText
-        }
+        val plusButton: ImageButton = findViewById(R.id.plusImageButton)
+        plusButton.setOnClickListener { updateCounterValue(add=true) }
 
         // Кнопка "вычесть"
-        findViewById<ImageButton>(R.id.minusImageButton).setOnClickListener {
-            val value: Int = valueText.text.toString().toInt()
-            val step: Int = stepText.text.toString().toInt()
-            currentValueText = (value - step).toString()
-            valueText.text = currentValueText
-        }
+        val minusButton: ImageButton = findViewById(R.id.minusImageButton)
+        minusButton.setOnClickListener { updateCounterValue(add=false) }
 
         // Кнопка "перейти на 2-ю активность"
-        findViewById<Button>(R.id.secondActivityButton).setOnClickListener {
+        val secondActivityButton: Button = findViewById(R.id.secondActivityButton)
+        secondActivityButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("value", valueText.text.toString())
             startActivity(intent)
         }
+    }
+
+    private fun updateCounterValue(add: Boolean) {
+        val valueText: TextView = findViewById(R.id.valueTextView)
+        val stepText: EditText = findViewById(R.id.stepEditText)
+        val value: Int = valueText.text.toString().toInt()
+        var step: Int = stepText.text.toString().toInt()
+        step = if (add) step else -step
+        currentValueText = (value + step).toString()
+        valueText.text = currentValueText
     }
 
     companion object {

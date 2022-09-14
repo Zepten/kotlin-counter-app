@@ -21,7 +21,6 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="{value}"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="96sp"

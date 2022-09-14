@@ -10,7 +10,6 @@
         android:id="@+id/valueTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="{value}"
         android:textAlignment="center"
         android:textSize="96sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,8 +30,7 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintEnd_toEndOf="@+id/tableRow"
-        app:layout_constraintStart_toStartOf="@+id/tableRow"
-        tools:text="{step}" />
+        app:layout_constraintStart_toStartOf="@+id/tableRow" />
 
     <TableRow
         android:id="@+id/tableRow"
